@@ -1,0 +1,20 @@
+﻿CREATE TABLE Phase1A (
+	id Int IDENTITY(1,1) PRIMARY KEY,
+	gid varchar(255) UNIQUE,
+    phaseCode varchar(255),
+    phaseName varchar(255),
+    phaseType varchar(255),
+    unitType varchar(255),
+	category varchar(255),
+    unitNo Int,
+	salutation varchar(255),
+	customerName varchar(255),
+	propertyAddress varchar(255),
+	homeOwnerManual varchar(50),
+	schematicDrawing varchar(255),
+	schematicDrawingCode varchar(255),
+	vp7 varchar(50),
+	vp7Code varchar(10),
+	residentHouseRules varchar(50),
+	dtmWhen datetime default CURRENT_TIMESTAMP
+);

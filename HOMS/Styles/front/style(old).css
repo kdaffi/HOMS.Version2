@@ -1,0 +1,60 @@
+html {
+    height:100%;
+    background-image: url("images/setia-bg.jpg");
+    }
+.landingpage{
+    background-color: rgba(255, 255, 255, 0.521);
+    width: 100%;
+    margin: -1px;
+    /* max-width: 1024px; */
+    text-align: center;
+    height:99vh;
+    font-family: 'Josefin Sans', Courier, monospace;
+}
+.banner img{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 190px;
+}
+.header img{
+    width: 98%;
+    margin-top: 10px;
+}
+.infotable{
+    line-height: 35px;
+    text-align: left;
+    padding: 10px;
+    font-size: 35px;
+}
+table, td {
+    border: 1px solid black;
+    padding:20px;
+}
+td.title{
+    width:30%;
+    font-weight: bold;
+    padding-left: 30px;
+}
+td.info{
+    padding-left: 30px;
+}
+.infotablecontent{
+    border-collapse: collapse;
+    width: 100%;
+}
+.buttonmanual{
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+.buttonclick {
+    background-color: #6d5027; 
+    border: none;
+    color: white;
+    padding: 30px 46px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20px;
+    font-size:40px;
+    margin-bottom: 15px;
+}

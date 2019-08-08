@@ -1,0 +1,14 @@
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\bin\HOMS.dll.config
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\bin\HOMS.dll
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\bin\HOMS.pdb
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\bin\HOMS.xml
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Release\HOMS.vbprojAssemblyReference.cache
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Release\HOMS.Resources.resources
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Release\HOMS.vbproj.GenerateResource.cache
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Release\HOMS.vbproj.CoreCompileInputs.cache
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Release\HOMS.dll
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Release\HOMS.xml
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Release\HOMS.pdb
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\bin\Newtonsoft.Json.dll
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\bin\Newtonsoft.Json.xml
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Release\HOMS.vbproj.CopyComplete

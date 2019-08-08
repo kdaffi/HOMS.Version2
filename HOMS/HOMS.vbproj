@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{4894EDD4-0FEC-4114-BFD5-4FA74C403CD1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HOMS</RootNamespace>
+    <AssemblyName>HOMS</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>HOMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>HOMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Details.aspx" />
+    <Content Include="Files\basic-html\images\bottom_bg.jpg" />
+    <Content Include="Files\basic-html\images\content.png" />
+    <Content Include="Files\basic-html\images\middle_bg.jpg" />
+    <Content Include="Files\basic-html\images\next.png" />
+    <Content Include="Files\basic-html\images\next2.png" />
+    <Content Include="Files\basic-html\images\next_big.png" />
+    <Content Include="Files\basic-html\images\previous.png" />
+    <Content Include="Files\basic-html\images\previous2.png" />
+    <Content Include="Files\basic-html\images\previous_big.png" />
+    <Content Include="Files\basic-html\images\top_bg.jpg" />
+    <Content Include="Files\basic-html\images\view.png" />
+    <Content Include="Files\basic-html\index.html" />
+    <Content Include="Files\basic-html\page1.html" />
+    <Content Include="Files\basic-html\page10.html" />
+    <Content Include="Files\basic-html\page11.html" />
+    <Content Include="Files\basic-html\page12.html" />
+    <Content Include="Files\basic-html\page13.html" />
+    <Content Include="Files\basic-html\page14.html" />
+    <Content Include="Files\basic-html\page15.html" />
+    <Content Include="Files\basic-html\page16.html" />
+    <Content Include="Files\basic-html\page17.html" />
+    <Content Include="Files\basic-html\page18.html" />
+    <Content Include="Files\basic-html\page19.html" />
+    <Content Include="Files\basic-html\page2.html" />
+    <Content Include="Files\basic-html\page20.html" />
+    <Content Include="Files\basic-html\page21.html" />
+    <Content Include="Files\basic-html\page22.html" />
+    <Content Include="Files\basic-html\page23.html" />
+    <Content Include="Files\basic-html\page24.html" />
+    <Content Include="Files\basic-html\page25.html" />
+    <Content Include="Files\basic-html\page26.html" />
+    <Content Include="Files\basic-html\page27.html" />
+    <Content Include="Files\basic-html\page28.html" />
+    <Content Include="Files\basic-html\page29.html" />
+    <Content Include="Files\basic-html\page3.html" />
+    <Content Include="Files\basic-html\page30.html" />
+    <Content Include="Files\basic-html\page31.html" />
+    <Content Include="Files\basic-html\page32.html" />
+    <Content Include="Files\basic-html\page33.html" />
+    <Content Include="Files\basic-html\page34.html" />
+    <Content Include="Files\basic-html\page35.html" />
+    <Content Include="Files\basic-html\page36.html" />
+    <Content Include="Files\basic-html\page37.html" />
+    <Content Include="Files\basic-html\page38.html" />
+    <Content Include="Files\basic-html\page39.html" />
+    <Content Include="Files\basic-html\page4.html" />
+    <Content Include="Files\basic-html\page40.html" />
+    <Content Include="Files\basic-html\page41.html" />
+    <Content Include="Files\basic-html\page42.html" />
+    <Content Include="Files\basic-html\page43.html" />
+    <Content Include="Files\basic-html\page44.html" />
+    <Content Include="Files\basic-html\page5.html" />
+    <Content Include="Files\basic-html\page6.html" />
+    <Content Include="Files\basic-html\page7.html" />
+    <Content Include="Files\basic-html\page8.html" />
+    <Content Include="Files\basic-html\page9.html" />
+    <Content Include="Files\config.xml" />
+    <Content Include="Files\extfiles\appLogoIcon.png" />
+    <Content Include="Files\extfiles\helpContentFileURL.png" />
+    <Content Include="Files\extfiles\mainbgImgUrl.jpg" />
+    <Content Include="Files\mobile-ext\appLogoIcon.png" />
+    <Content Include="Files\mobile-ext\backGroundImgURL.jpg" />
+    <Content Include="Files\mobile-ext\loadingPicture.png" />
+    <Content Include="Files\mobile\1.jpg" />
+    <Content Include="Files\mobile\10.jpg" />
+    <Content Include="Files\mobile\11.jpg" />
+    <Content Include="Files\mobile\12.jpg" />
+    <Content Include="Files\mobile\13.jpg" />
+    <Content Include="Files\mobile\14.jpg" />
+    <Content Include="Files\mobile\15.jpg" />
+    <Content Include="Files\mobile\16.jpg" />
+    <Content Include="Files\mobile\17.jpg" />
+    <Content Include="Files\mobile\18.jpg" />
+    <Content Include="Files\mobile\19.jpg" />
+    <Content Include="Files\mobile\2.jpg" />
+    <Content Include="Files\mobile\20.jpg" />
+    <Content Include="Files\mobile\21.jpg" />
+    <Content Include="Files\mobile\22.jpg" />
+    <Content Include="Files\mobile\23.jpg" />
+    <Content Include="Files\mobile\24.jpg" />
+    <Content Include="Files\mobile\25.jpg" />
+    <Content Include="Files\mobile\26.jpg" />
+    <Content Include="Files\mobile\27.jpg" />
+    <Content Include="Files\mobile\28.jpg" />
+    <Content Include="Files\mobile\29.jpg" />
+    <Content Include="Files\mobile\3.jpg" />
+    <Content Include="Files\mobile\30.jpg" />
+    <Content Include="Files\mobile\31.jpg" />
+    <Content Include="Files\mobile\32.jpg" />
+    <Content Include="Files\mobile\33.jpg" />
+    <Content Include="Files\mobile\34.jpg" />
+    <Content Include="Files\mobile\35.jpg" />
+    <Content Include="Files\mobile\36.jpg" />
+    <Content Include="Files\mobile\37.jpg" />
+    <Content Include="Files\mobile\38.jpg" />
+    <Content Include="Files\mobile\39.jpg" />
+    <Content Include="Files\mobile\4.jpg" />
+    <Content Include="Files\mobile\40.jpg" />
+    <Content Include="Files\mobile\41.jpg" />
+    <Content Include="Files\mobile\42.jpg" />
+    <Content Include="Files\mobile\43.jpg" />
+    <Content Include="Files\mobile\44.jpg" />
+    <Content Include="Files\mobile\5.jpg" />
+    <Content Include="Files\mobile\6.jpg" />
+    <Content Include="Files\mobile\7.jpg" />
+    <Content Include="Files\mobile\8.jpg" />
+    <Content Include="Files\mobile\9.jpg" />
+    <Content Include="Files\search\bookText.xml" />
+    <Content Include="Files\search\search1.xml" />
+    <Content Include="Files\shot.png" />
+    <Content Include="Files\thumb\1.jpg" />
+    <Content Include="Files\thumb\10.jpg" />
+    <Content Include="Files\thumb\11.jpg" />
+    <Content Include="Files\thumb\12.jpg" />
+    <Content Include="Files\thumb\13.jpg" />
+    <Content Include="Files\thumb\14.jpg" />
+    <Content Include="Files\thumb\15.jpg" />
+    <Content Include="Files\thumb\16.jpg" />
+    <Content Include="Files\thumb\17.jpg" />
+    <Content Include="Files\thumb\18.jpg" />
+    <Content Include="Files\thumb\19.jpg" />
+    <Content Include="Files\thumb\2.jpg" />
+    <Content Include="Files\thumb\20.jpg" />
+    <Content Include="Files\thumb\21.jpg" />
+    <Content Include="Files\thumb\22.jpg" />
+    <Content Include="Files\thumb\23.jpg" />
+    <Content Include="Files\thumb\24.jpg" />
+    <Content Include="Files\thumb\25.jpg" />
+    <Content Include="Files\thumb\26.jpg" />
+    <Content Include="Files\thumb\27.jpg" />
+    <Content Include="Files\thumb\28.jpg" />
+    <Content Include="Files\thumb\29.jpg" />
+    <Content Include="Files\thumb\3.jpg" />
+    <Content Include="Files\thumb\30.jpg" />
+    <Content Include="Files\thumb\31.jpg" />
+    <Content Include="Files\thumb\32.jpg" />
+    <Content Include="Files\thumb\33.jpg" />
+    <Content Include="Files\thumb\34.jpg" />
+    <Content Include="Files\thumb\35.jpg" />
+    <Content Include="Files\thumb\36.jpg" />
+    <Content Include="Files\thumb\37.jpg" />
+    <Content Include="Files\thumb\38.jpg" />
+    <Content Include="Files\thumb\39.jpg" />
+    <Content Include="Files\thumb\4.jpg" />
+    <Content Include="Files\thumb\40.jpg" />
+    <Content Include="Files\thumb\41.jpg" />
+    <Content Include="Files\thumb\42.jpg" />
+    <Content Include="Files\thumb\43.jpg" />
+    <Content Include="Files\thumb\44.jpg" />
+    <Content Include="Files\thumb\5.jpg" />
+    <Content Include="Files\thumb\6.jpg" />
+    <Content Include="Files\thumb\7.jpg" />
+    <Content Include="Files\thumb\8.jpg" />
+    <Content Include="Files\thumb\9.jpg" />
+    <Content Include="Manage.aspx" />
+    <Content Include="OwnerManual.aspx" />
+    <Content Include="mobile\javascript\bookmark_config.js" />
+    <Content Include="mobile\javascript\config.js" />
+    <Content Include="mobile\javascript\jquery-1.9.1.min.js" />
+    <Content Include="mobile\javascript\LoadingJS.js" />
+    <Content Include="mobile\javascript\main.js" />
+    <Content Include="mobile\javascript\search_config.js" />
+    <Content Include="mobile\style\icon\about.png" />
+    <Content Include="mobile\style\icon\addImage.png" />
+    <Content Include="mobile\style\icon\ad_close.png" />
+    <Content Include="mobile\style\icon\ad_close_down.png" />
+    <Content Include="mobile\style\icon\annotation.png" />
+    <Content Include="mobile\style\icon\arrow-down.png" />
+    <Content Include="mobile\style\icon\arrow-up.png" />
+    <Content Include="mobile\style\icon\arrow.png" />
+    <Content Include="mobile\style\icon\arrow2.png" />
+    <Content Include="mobile\style\icon\arrow3.png" />
+    <Content Include="mobile\style\icon\audio-advanced.png" />
+    <Content Include="mobile\style\icon\audio-christmas.png" />
+    <Content Include="mobile\style\icon\audio-decent.png" />
+    <Content Include="mobile\style\icon\audio-default.png" />
+    <Content Include="mobile\style\icon\audio-enjoy.png" />
+    <Content Include="mobile\style\icon\audio-fade.png" />
+    <Content Include="mobile\style\icon\audio-glass.png" />
+    <Content Include="mobile\style\icon\audio-simple.png" />
+    <Content Include="mobile\style\icon\audio-tree.png" />
+    <Content Include="mobile\style\icon\autoPlay.png" />
+    <Content Include="mobile\style\icon\BackGround.jpg" />
+    <Content Include="mobile\style\icon\background_prev.png" />
+    <Content Include="mobile\style\icon\backissues.png" />
+    <Content Include="mobile\style\icon\blockquote.png" />
+    <Content Include="mobile\style\icon\bold.png" />
+    <Content Include="mobile\style\icon\bookmark.png" />
+    <Content Include="mobile\style\icon\bookMarkEnter.png" />
+    <Content Include="mobile\style\icon\bookMark_cancel.png" />
+    <Content Include="mobile\style\icon\buttonBg.png" />
+    <Content Include="mobile\style\icon\cancel.png" />
+    <Content Include="mobile\style\icon\cartAdd.png" />
+    <Content Include="mobile\style\icon\cartDelete.png" />
+    <Content Include="mobile\style\icon\cartLow.png" />
+    <Content Include="mobile\style\icon\catalog_drag.png" />
+    <Content Include="mobile\style\icon\catalog_icon.png" />
+    <Content Include="mobile\style\icon\catalog_zoomin.png" />
+    <Content Include="mobile\style\icon\catalog_zoomout.png" />
+    <Content Include="mobile\style\icon\centerblur.png" />
+    <Content Include="mobile\style\icon\choosed.png" />
+    <Content Include="mobile\style\icon\classic-buttons.png" />
+    <Content Include="mobile\style\icon\clear.png" />
+    <Content Include="mobile\style\icon\close.png" />
+    <Content Include="mobile\style\icon\closecat.png" />
+    <Content Include="mobile\style\icon\closed.png" />
+    <Content Include="mobile\style\icon\closeForm.png" />
+    <Content Include="mobile\style\icon\closeForm_down.png" />
+    <Content Include="mobile\style\icon\close_down.png" />
+    <Content Include="mobile\style\icon\close_form.png" />
+    <Content Include="mobile\style\icon\collapsed.png" />
+    <Content Include="mobile\style\icon\controlButton.png" />
+    <Content Include="mobile\style\icon\cursor.png" />
+    <Content Include="mobile\style\icon\delete.png" />
+    <Content Include="mobile\style\icon\demo.png" />
+    <Content Include="mobile\style\icon\digg.png" />
+    <Content Include="mobile\style\icon\download.png" />
+    <Content Include="mobile\style\icon\drag.png" />
+    <Content Include="mobile\style\icon\edit.png" />
+    <Content Include="mobile\style\icon\email.png" />
+    <Content Include="mobile\style\icon\enterFull.png" />
+    <Content Include="mobile\style\icon\enterFull_over.png" />
+    <Content Include="mobile\style\icon\exitFull.png" />
+    <Content Include="mobile\style\icon\exitFullscreen.png" />
+    <Content Include="mobile\style\icon\exitFull_over.png" />
+    <Content Include="mobile\style\icon\expanded.png" />
+    <Content Include="mobile\style\icon\facebook.png" />
+    <Content Include="mobile\style\icon\First.png" />
+    <Content Include="mobile\style\icon\firstButton.png" />
+    <Content Include="mobile\style\icon\fontcolor.png" />
+    <Content Include="mobile\style\icon\fullscreen.png" />
+    <Content Include="mobile\style\icon\google.png" />
+    <Content Include="mobile\style\icon\gotoPage.png" />
+    <Content Include="mobile\style\icon\Help.png" />
+    <Content Include="mobile\style\icon\help_form.png" />
+    <Content Include="mobile\style\icon\hideShow.png" />
+    <Content Include="mobile\style\icon\highligh.png" />
+    <Content Include="mobile\style\icon\highlight.png" />
+    <Content Include="mobile\style\icon\home.png" />
+    <Content Include="mobile\style\icon\houtui.png" />
+    <Content Include="mobile\style\icon\hyperlink.png" />
+    <Content Include="mobile\style\icon\ImgFile_update.png" />
+    <Content Include="mobile\style\icon\indent.png" />
+    <Content Include="mobile\style\icon\italic.png" />
+    <Content Include="mobile\style\icon\justycenter.png" />
+    <Content Include="mobile\style\icon\justyleft.png" />
+    <Content Include="mobile\style\icon\justyright.png" />
+    <Content Include="mobile\style\icon\languageChange.png" />
+    <Content Include="mobile\style\icon\Last.png" />
+    <Content Include="mobile\style\icon\lastButton.png" />
+    <Content Include="mobile\style\icon\leftCoil.png" />
+    <Content Include="mobile\style\icon\linkedin.png" />
+    <Content Include="mobile\style\icon\loading.gif" />
+    <Content Include="mobile\style\icon\miBookmark.png" />
+    <Content Include="mobile\style\icon\miSearch.png" />
+    <Content Include="mobile\style\icon\miShare.png" />
+    <Content Include="mobile\style\icon\more.png" />
+    <Content Include="mobile\style\icon\moreBar.png" />
+    <Content Include="mobile\style\icon\moveByDrag.png" />
+    <Content Include="mobile\style\icon\moveByPos.png" />
+    <Content Include="mobile\style\icon\myspace.png" />
+    <Content Include="mobile\style\icon\NE.png" />
+    <Content Include="mobile\style\icon\next.png" />
+    <Content Include="mobile\style\icon\nextButton.png" />
+    <Content Include="mobile\style\icon\next_down.png" />
+    <Content Include="mobile\style\icon\next_image.png" />
+    <Content Include="mobile\style\icon\next_normal.png" />
+    <Content Include="mobile\style\icon\next_normal_down.png" />
+    <Content Include="mobile\style\icon\next_page.png" />
+    <Content Include="mobile\style\icon\note.jpg" />
+    <Content Include="mobile\style\icon\note.png" />
+    <Content Include="mobile\style\icon\noteclose.png" />
+    <Content Include="mobile\style\icon\noteclose_down.png" />
+    <Content Include="mobile\style\icon\noteImg_close.png" />
+    <Content Include="mobile\style\icon\noteImg_del.png" />
+    <Content Include="mobile\style\icon\noteImg_save.png" />
+    <Content Include="mobile\style\icon\notesadd.png" />
+    <Content Include="mobile\style\icon\note_close.png" />
+    <Content Include="mobile\style\icon\note_del.png" />
+    <Content Include="mobile\style\icon\note_edit.png" />
+    <Content Include="mobile\style\icon\note_narrow.png" />
+    <Content Include="mobile\style\icon\note_revert.png" />
+    <Content Include="mobile\style\icon\note_save.png" />
+    <Content Include="mobile\style\icon\opened.png" />
+    <Content Include="mobile\style\icon\orderlist.png" />
+    <Content Include="mobile\style\icon\oudent.png" />
+    <Content Include="mobile\style\icon\pad.png" />
+    <Content Include="mobile\style\icon\pad_down.png" />
+    <Content Include="mobile\style\icon\PB.png" />
+    <Content Include="mobile\style\icon\pc.png" />
+    <Content Include="mobile\style\icon\pc_down.png" />
+    <Content Include="mobile\style\icon\pen.png" />
+    <Content Include="mobile\style\icon\phone.png" />
+    <Content Include="mobile\style\icon\phone_down.png" />
+    <Content Include="mobile\style\icon\photoGallery.png" />
+    <Content Include="mobile\style\icon\photoGallery_close.png" />
+    <Content Include="mobile\style\icon\photo_next.png" />
+    <Content Include="mobile\style\icon\photo_prev.png" />
+    <Content Include="mobile\style\icon\player-exit-fullscreen.png" />
+    <Content Include="mobile\style\icon\player-fullscreen.png" />
+    <Content Include="mobile\style\icon\player-handle.png" />
+    <Content Include="mobile\style\icon\player-pause.png" />
+    <Content Include="mobile\style\icon\player-play.png" />
+    <Content Include="mobile\style\icon\player-screenplay.png" />
+    <Content Include="mobile\style\icon\player-volume-full.png" />
+    <Content Include="mobile\style\icon\player-volume.png" />
+    <Content Include="mobile\style\icon\PR.png" />
+    <Content Include="mobile\style\icon\prev.png" />
+    <Content Include="mobile\style\icon\prevButton.png" />
+    <Content Include="mobile\style\icon\previous_down.png" />
+    <Content Include="mobile\style\icon\previous_normal.png" />
+    <Content Include="mobile\style\icon\previous_normal_down.png" />
+    <Content Include="mobile\style\icon\prev_page.png" />
+    <Content Include="mobile\style\icon\pre_image.png" />
+    <Content Include="mobile\style\icon\print.png" />
+    <Content Include="mobile\style\icon\print_icon.png" />
+    <Content Include="mobile\style\icon\print_left.png" />
+    <Content Include="mobile\style\icon\print_off.png" />
+    <Content Include="mobile\style\icon\print_on.png" />
+    <Content Include="mobile\style\icon\print_right.png" />
+    <Content Include="mobile\style\icon\progress.gif" />
+    <Content Include="mobile\style\icon\quiz.png" />
+    <Content Include="mobile\style\icon\reddit.png" />
+    <Content Include="mobile\style\icon\redo.png" />
+    <Content Include="mobile\style\icon\remark.png" />
+    <Content Include="mobile\style\icon\rightCoil.png" />
+    <Content Include="mobile\style\icon\round-player-exit-fullscreen.png" />
+    <Content Include="mobile\style\icon\round-player-fullscreen.png" />
+    <Content Include="mobile\style\icon\round-seek-handle.png" />
+    <Content Include="mobile\style\icon\save.png" />
+    <Content Include="mobile\style\icon\search.png" />
+    <Content Include="mobile\style\icon\searchButton.png" />
+    <Content Include="mobile\style\icon\search_form.png" />
+    <Content Include="mobile\style\icon\set.png" />
+    <Content Include="mobile\style\icon\setting.png" />
+    <Content Include="mobile\style\icon\shape.png" />
+    <Content Include="mobile\style\icon\shapes_arrow.png" />
+    <Content Include="mobile\style\icon\shapes_ellipse.png" />
+    <Content Include="mobile\style\icon\shapes_line.png" />
+    <Content Include="mobile\style\icon\shapes_rect.png" />
+    <Content Include="mobile\style\icon\sharethis.png" />
+    <Content Include="mobile\style\icon\showNoteList.png" />
+    <Content Include="mobile\style\icon\shrink.png" />
+    <Content Include="mobile\style\icon\signature.png" />
+    <Content Include="mobile\style\icon\signature_close.png" />
+    <Content Include="mobile\style\icon\signature_date.png" />
+    <Content Include="mobile\style\icon\signature_dateClose.png" />
+    <Content Include="mobile\style\icon\signature_del.png" />
+    <Content Include="mobile\style\icon\signature_down.png" />
+    <Content Include="mobile\style\icon\signature_revert.png" />
+    <Content Include="mobile\style\icon\signature_up.png" />
+    <Content Include="mobile\style\icon\singleClose.png" />
+    <Content Include="mobile\style\icon\slide-exitFullscreen.png" />
+    <Content Include="mobile\style\icon\slide-fullscreen.png" />
+    <Content Include="mobile\style\icon\slide-home.png" />
+    <Content Include="mobile\style\icon\slide-share.png" />
+    <Content Include="mobile\style\icon\slide_firstButton.png" />
+    <Content Include="mobile\style\icon\slide_lastButton.png" />
+    <Content Include="mobile\style\icon\slide_leftButton.png" />
+    <Content Include="mobile\style\icon\slide_rightButton.png" />
+    <Content Include="mobile\style\icon\smallblack-buttons.png" />
+    <Content Include="mobile\style\icon\soundOff.png" />
+    <Content Include="mobile\style\icon\soundOn.png" />
+    <Content Include="mobile\style\icon\stopAutoPlay.png" />
+    <Content Include="mobile\style\icon\strickthrough.png" />
+    <Content Include="mobile\style\icon\strikethrough.png" />
+    <Content Include="mobile\style\icon\tableOfContent.png" />
+    <Content Include="mobile\style\icon\textDown.png" />
+    <Content Include="mobile\style\icon\textUp.png" />
+    <Content Include="mobile\style\icon\thickness.png" />
+    <Content Include="mobile\style\icon\thickness_left.png" />
+    <Content Include="mobile\style\icon\thumb.png" />
+    <Content Include="mobile\style\icon\thumbnails.png" />
+    <Content Include="mobile\style\icon\thumbnails_down.png" />
+    <Content Include="mobile\style\icon\thumbnail_point.png" />
+    <Content Include="mobile\style\icon\toolbarshow.png" />
+    <Content Include="mobile\style\icon\toolbarshow_down.png" />
+    <Content Include="mobile\style\icon\twitter.png" />
+    <Content Include="mobile\style\icon\unchoosed.png" />
+    <Content Include="mobile\style\icon\underline.png" />
+    <Content Include="mobile\style\icon\undo.png" />
+    <Content Include="mobile\style\icon\unorderlist.png" />
+    <Content Include="mobile\style\icon\video-circle.png" />
+    <Content Include="mobile\style\icon\videoGallery.png" />
+    <Content Include="mobile\style\icon\volume-bar.png" />
+    <Content Include="mobile\style\icon\youjian.png" />
+    <Content Include="mobile\style\icon\ZD.png" />
+    <Content Include="mobile\style\icon\ZM.png" />
+    <Content Include="mobile\style\icon\ZO.png" />
+    <Content Include="mobile\style\icon\ZoomDown.png" />
+    <Content Include="mobile\style\icon\ZoomIn.png" />
+    <Content Include="mobile\style\icon\ZoomOut.png" />
+    <Content Include="mobile\style\icon\ZoomUp.png" />
+    <Content Include="mobile\style\icon\ZU.png" />
+    <Content Include="mobile\style\phoneIcon\phone_icon.png" />
+    <Content Include="mobile\style\phoneTemplate.css" />
+    <Content Include="mobile\style\player.css" />
+    <Content Include="mobile\style\raw\flipsound.mp3" />
+    <Content Include="mobile\style\scrollbar.css" />
+    <Content Include="mobile\style\style.css" />
+    <Content Include="mobile\style\template.css" />
+    <Content Include="QR.aspx" />
+    <Content Include="Styles\blank.jpg" />
+    <Content Include="Styles\css\addons\datatables-select.css" />
+    <Content Include="Styles\css\addons\datatables-select.min.css" />
+    <Content Include="Styles\css\addons\datatables.css" />
+    <Content Include="Styles\css\addons\datatables.min.css" />
+    <Content Include="Styles\css\addons\directives.css" />
+    <Content Include="Styles\css\addons\directives.min.css" />
+    <Content Include="Styles\css\bootstrap-grid.css" />
+    <Content Include="Styles\css\bootstrap-grid.min.css" />
+    <Content Include="Styles\css\bootstrap-reboot.css" />
+    <Content Include="Styles\css\bootstrap-reboot.min.css" />
+    <Content Include="Styles\css\bootstrap.css" />
+    <Content Include="Styles\css\bootstrap.min.css" />
+    <Content Include="Styles\front\images\401.png" />
+    <Content Include="Styles\front\iziModal.min.css" />
+    <Content Include="Styles\css\mdb.min.css" />
+    <Content Include="Styles\css\modules\animations-extended.css" />
+    <Content Include="Styles\css\modules\animations-extended.min.css" />
+    <Content Include="Styles\css\style.css" />
+    <Content Include="Styles\css\style.min.css" />
+    <Content Include="Styles\front\images\300pxlogo.png" />
+    <Content Include="Styles\front\images\BUNGALOW_WINDSOR_ROUNDED_CORNER_SHADOW.png" />
+    <Content Include="Styles\front\images\greypic.jpg" />
+    <Content Include="Styles\front\images\SEMIDEEFRONT_OAKLEY_ROUNDED_CORNER_SHADOW.png" />
+    <Content Include="Styles\front\images\SEMID_TYPE_DE_DARLINGTON_ROUND_CORNER_SHADOW.png" />
+    <Content Include="Styles\front\images\setia-bg.jpg" />
+    <Content Include="Styles\front\images\TERRACE22FRONT_SHELLY__ROUNDED_CORNER_SHADOW.png" />
+    <Content Include="Styles\front\images\TERRACE24FRONT_TILBURY_ROUNDED_CORNER_SHADOW.png" />
+    <Content Include="Styles\front\images\TERRACE26FRONT_ALBION_ROUNDED_CORNER_SHADOW.png" />
+    <Content Include="Styles\front\jrz5lhn.css" />
+    <Content Include="Styles\front\style.css" />
+    <Content Include="Styles\js\addons\datatables-select.js" />
+    <Content Include="Styles\js\addons\datatables-select.min.js" />
+    <Content Include="Styles\js\addons\datatables.js" />
+    <Content Include="Styles\js\addons\datatables.min.js" />
+    <Content Include="Styles\js\addons\imagesloaded.pkgd.min.js" />
+    <Content Include="Styles\js\addons\masonry.pkgd.min.js" />
+    <Content Include="Styles\js\addons\rating.js" />
+    <Content Include="Styles\js\bootstrap.bundle.js" />
+    <Content Include="Styles\js\bootstrap.bundle.min.js" />
+    <Content Include="Styles\js\bootstrap.js" />
+    <Content Include="Styles\js\bootstrap.min.js" />
+    <Content Include="Styles\js\homs.js" />
+    <Content Include="Styles\js\iziModal.min.js" />
+    <Content Include="Styles\js\jquery-3.4.0.min.js" />
+    <Content Include="Styles\js\mdb.min.js" />
+    <Content Include="Styles\js\modules\bs-custom-file-input.js" />
+    <Content Include="Styles\js\modules\chart.js" />
+    <Content Include="Styles\js\modules\enhanced-modals.js" />
+    <Content Include="Styles\js\modules\forms-free.js" />
+    <Content Include="Styles\js\modules\jquery.easing.js" />
+    <Content Include="Styles\js\modules\scrolling-navbar.js" />
+    <Content Include="Styles\js\modules\treeview.js" />
+    <Content Include="Styles\js\modules\velocity.js" />
+    <Content Include="Styles\js\modules\velocity.min.js" />
+    <Content Include="Styles\js\modules\waves.js" />
+    <Content Include="Styles\js\modules\wow.js" />
+    <Content Include="Styles\js\popper.min.js" />
+    <Content Include="Table.txt" />
+    <Content Include="Unauthorized.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Details.aspx.designer.vb">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Details.aspx.vb">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Manage.aspx.designer.vb">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage.aspx.vb">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="OwnerManual.aspx.designer.vb">
+      <DependentUpon>OwnerManual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerManual.aspx.vb">
+      <DependentUpon>OwnerManual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="QR.aspx.designer.vb">
+      <DependentUpon>QR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QR.aspx.vb">
+      <DependentUpon>QR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Unauthorized.aspx.designer.vb">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Unauthorized.aspx.vb">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data.csv" />
+    <Content Include="Files\downloads\Setia_Eco Templer_HomeOwner_Manual.pdf" />
+    <Content Include="Files\TYPE_A\Link_Villa_Type_A1_Corner_And_End_Lot.pdf" />
+    <Content Include="Files\TYPE_A\Link_Villa_Type_A1_Intermediate.pdf" />
+    <Content Include="Files\TYPE_A\Link_Villa_Type_A_Corner_And_End_Lot.pdf" />
+    <Content Include="Files\TYPE_A\Link_Villa_Type_A_Intermediate.pdf" />
+    <Content Include="Files\Renovated_Units\1021_Type_A_Renovation.pdf" />
+    <Content Include="Files\Renovated_Units\1037_Type_A1_Renovation_Corner_And_End.pdf" />
+    <Content Include="Files\Renovated_Units\1038_Type_A_Renovation.pdf" />
+    <Content Include="Files\Renovated_Units\1044_Type_A_Renovation.pdf" />
+    <Content Include="Files\Renovated_Units\1046_Type_A1_Renovation_Corner_And_End.pdf" />
+    <Content Include="Files\Renovated_Units\1048_Type_A_Renovation.pdf" />
+    <Content Include="Files\Renovated_Units\1049_Type_A_Renovation.pdf" />
+    <Content Include="Files\Renovated_Units\1056_Type_A1_Renovation.pdf" />
+    <Content Include="Files\TYPE_B\Link_Villa_Type_B1_Corner_And_End_Lot.pdf" />
+    <Content Include="Files\TYPE_B\Link_Villa_Type_B1_Intermediate.pdf" />
+    <Content Include="Files\TYPE_B\Link_Villa_Type_B_Corner_And_End_Lot.pdf" />
+    <Content Include="Files\TYPE_B\Link_Villa_Type_B_Intermediate.pdf" />
+    <Content Include="Files\TYPE_C\Link_Villa_Type_C1_Corner_And_End_Lot.pdf" />
+    <Content Include="Files\TYPE_C\Link_Villa_Type_C1_Intermediate.pdf" />
+    <Content Include="Files\TYPE_C\Link_Villa_Type_C_Corner_And_End_Lot.pdf" />
+    <Content Include="Files\TYPE_C\Link_Villa_Type_C_Intermediate.pdf" />
+    <Content Include="Files\TYPE_D\Semi_D_Type_D.pdf" />
+    <Content Include="Files\TYPE_D\Semi_D_Type_D1.pdf" />
+    <Content Include="Files\TYPE_E\Semi_D_Type_E.pdf" />
+    <Content Include="Files\TYPE_E\Semi_D_Type_E1.pdf" />
+    <Content Include="Files\TYPE_F\Bungalow_Type_F.pdf" />
+    <Content Include="Files\TYPE_F\Bungalow_Type_F1.pdf" />
+    <Content Include="Files\Schematic\RENOVATION_CORNER_END_TYPE_A_AND_A1.pdf" />
+    <Content Include="Files\Schematic\RENOVATION_INTERMEDIATE_TYPE_A_AND_A1.pdf" />
+    <Content Include="Files\Schematic\SCHEMATIC_DRAWING_TYPE_D_AND_D1.pdf" />
+    <Content Include="Files\Schematic\SCHEMATIC_DRAWING_TYPE_E_AND_E1.pdf" />
+    <Content Include="Files\Schematic\SCHEMATIC_DRAWING_TYPE_F_AND_F1.pdf" />
+    <Content Include="Files\Schematic\TYPE_A_AND_A1_CORNER_AND_END_LOT.pdf" />
+    <Content Include="Files\Schematic\TYPE_A_AND_A1_INTERMEDIATE_LOT.pdf" />
+    <Content Include="Files\Schematic\TYPE_B_AND_B1_CORNER_AND_END_LOT.pdf" />
+    <Content Include="Files\Schematic\TYPE_B_AND_B1_INTERMEDIATE_LOT.pdf" />
+    <Content Include="Files\Schematic\TYPE_C_AND_C1_CORNER_AND_END_LOT.pdf" />
+    <Content Include="Files\Schematic\TYPE_C_AND_C1_INTERMEDIATE_LOT.pdf" />
+    <Content Include="Files\Resident_House_Rules.pdf" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Styles\css\.DS_Store" />
+    <Content Include="Styles\css\bootstrap-grid.css.map" />
+    <Content Include="Styles\css\bootstrap-grid.min.css.map" />
+    <Content Include="Styles\css\bootstrap-reboot.css.map" />
+    <Content Include="Styles\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Styles\css\bootstrap.css.map" />
+    <Content Include="Styles\css\bootstrap.min.css.map" />
+    <Content Include="Styles\js\bootstrap.bundle.js.map" />
+    <Content Include="Styles\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Styles\js\bootstrap.js.map" />
+    <Content Include="Styles\js\bootstrap.min.js.map" />
+    <Content Include="Styles\font\roboto\Roboto-Bold.eot" />
+    <Content Include="Styles\font\roboto\Roboto-Bold.ttf" />
+    <Content Include="Styles\font\roboto\Roboto-Bold.woff" />
+    <Content Include="Styles\font\roboto\Roboto-Bold.woff2" />
+    <Content Include="Styles\font\roboto\Roboto-Light.eot" />
+    <Content Include="Styles\font\roboto\Roboto-Light.ttf" />
+    <Content Include="Styles\font\roboto\Roboto-Light.woff" />
+    <Content Include="Styles\font\roboto\Roboto-Light.woff2" />
+    <Content Include="Styles\font\roboto\Roboto-Medium.eot" />
+    <Content Include="Styles\font\roboto\Roboto-Medium.ttf" />
+    <Content Include="Styles\font\roboto\Roboto-Medium.woff" />
+    <Content Include="Styles\font\roboto\Roboto-Medium.woff2" />
+    <Content Include="Styles\font\roboto\Roboto-Regular.eot" />
+    <Content Include="Styles\font\roboto\Roboto-Regular.ttf" />
+    <Content Include="Styles\font\roboto\Roboto-Regular.woff" />
+    <Content Include="Styles\font\roboto\Roboto-Regular.woff2" />
+    <Content Include="Styles\font\roboto\Roboto-Thin.eot" />
+    <Content Include="Styles\font\roboto\Roboto-Thin.ttf" />
+    <Content Include="Styles\font\roboto\Roboto-Thin.woff" />
+    <Content Include="Styles\font\roboto\Roboto-Thin.woff2" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\pageConfig\" />
+    <Folder Include="obj\" />
+    <Folder Include="Styles\front\picture_library\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61622</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61622/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

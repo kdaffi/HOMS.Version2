@@ -1,0 +1,137 @@
+html {
+    height:100%;
+    background-image: url("images/setia-bg.jpg");
+	padding-bottom:2px;
+    }
+
+.firstCapital:first-letter {
+    text-transform: uppercase;
+}
+
+.firstCapital {
+    display: inline-block;
+    text-transform: lowercase;
+}
+
+.capitalize {
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.landingpage {
+    /*background-color: rgba(255, 255, 255, 0.521);*/
+    width: 100%;
+    margin: 0px;
+    padding-bottom: 2px;
+    /*max-width: 500px;*/
+    text-align: center;
+    height: 100vh;
+    font-family: adobe-garamond-pro,serif;
+    font-weight: 2;
+    font-style: normal;
+}
+
+.banner img{
+    margin-top: 2px;
+    margin-bottom: 10px;
+    height: 150px;
+}
+.header img{
+    width: 98%;
+    margin-top: 10px;
+}
+.infotable{
+    line-height: 35px;
+    text-align: left;
+    padding: 17px;
+    font-size: 45px;
+}
+table, td {
+    border: 1.4px solid black;
+    padding:20px;
+}
+td.title{
+    width:16%;
+    font-weight: bold;
+	line-height:49px;
+    padding-left:9px;
+}
+
+td.property{
+    width:16%;
+    font-weight: bold;
+	line-height:55px;
+    padding-left:9px;
+}
+
+td.info{
+    padding-left:9px;
+	line-height:48px;
+}
+.infotablecontent{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.btnview{
+    margin-top: 20px;
+    padding-bottom: 10px;
+	float:center !important;
+	
+}
+
+
+.btnrow1{
+    margin-top: 20px;
+    padding-bottom: 10px;
+	float:center !important;
+	
+}
+
+.btnrow2{
+    margin-top: -10px;
+    padding-bottom: 10px;
+    float:center !important;
+}
+
+.buttonview {
+    background-color: #6d5027; 
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 15px;
+    font-size:35px;
+    margin-bottom: 14px;
+	transition: all 0.5s;
+	cursor: pointer;
+	border: 1px solid #2d6898;
+}
+.buttonclick {
+    background-color: #6d5027; 
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 15px;
+    font-size:35px;
+    margin-bottom: 14px;
+	transition: all 0.5s;
+	cursor: pointer;
+	border: 1px solid #2d6898;
+    background-image: linear-gradient(bottom, rgb(38,85,2) 0%, rgb(47, 98, 29) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(38,85,2) 0%, rgb(47, 98, 29) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(38,85,2) 0%, rgb(47, 98, 29) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(38,85,2) 0%, rgb(47, 98, 29) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(38,85,2) 0%, rgb(47, 98, 29) 100%);
+}
+
+.un4 {
+    height: 17em;
+    margin-top: 30px;
+}
