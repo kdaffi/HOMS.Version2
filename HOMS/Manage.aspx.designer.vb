@@ -59,6 +59,15 @@ Partial Public Class Manage
     Protected WithEvents signOut As Global.System.Web.UI.WebControls.LinkButton
     
     '''<summary>
+    '''Label_Expired control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label_Expired As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''FileUpload1 control.
     '''</summary>
     '''<remarks>

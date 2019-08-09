@@ -11,3 +11,4 @@ C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Debug\HOMS.vb
 C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Debug\HOMS.dll
 C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Debug\HOMS.xml
 C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Debug\HOMS.pdb
+C:\Users\kdafi\Documents\Visual Studio 2019\Projects\HOMS\HOMS\obj\Debug\HOMS.vbprojAssemblyReference.cache

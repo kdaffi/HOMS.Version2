@@ -405,6 +405,7 @@ Public Class Manage
             Dim responseFromServer As String = reader.ReadToEnd()
             ' Display the content.
             Dim license As String = JObject.Parse(responseFromServer)("Active")
+            Dim expirationDate As String = JObject.Parse(responseFromServer)("ValidTo")
 
             If license IsNot Nothing Then
                 If license = "0" Then
@@ -414,6 +415,14 @@ Public Class Manage
                     btnExport.Visible = False
                     btnExample.Visible = False
                     FileUpload1.Visible = False
+                    Label_Expired.Visible = False
+                End If
+
+                If expirationDate IsNot Nothing Then
+                    Label_Expired.Visible = True
+                    Label_Expired.Font.Bold = True
+                    Label_Expired.ForeColor = Drawing.Color.Crimson
+                    Label_Expired.Text = "Expiry date: " + expirationDate.ToString
                 End If
             End If
 

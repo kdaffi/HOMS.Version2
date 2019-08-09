@@ -21,8 +21,10 @@
        <div class="container" style="margin-top: 15pt;">
         <div class="row">
             <asp:Label ID="Label1" class="alert alert-info col-12" role="alert" runat="server" Text="* Owner Link: http://yoururl.com/QR.aspx?id={ID}">
-                 <asp:LinkButton style="float:right;" ID="signOut" runat="server" OnClick="btnsignOut_Click" class="btn btn-warning btn-md">Log out</asp:LinkButton>
+             <asp:LinkButton style="float:right;" ID="signOut" runat="server" OnClick="btnsignOut_Click" class="btn btn-warning btn-md">Log out</asp:LinkButton>
+             <br /><asp:Label ID="Label_Expired" runat="server"></asp:Label>
             </asp:Label>
+            
         </div>
         <div class="row">
           <div class="col-md">

@@ -8,25 +8,6 @@ Public Class Landing
         Dim bgimg = Session("bgimg")
         Dim sql_result As SqlDataReader
 
-        If bgimg IsNot Nothing Then
-            If bgimg <> vbEmpty.ToString() Then
-                form1.Style.Add(HtmlTextWriterStyle.BackgroundImage, bgimg)
-                form1.Style.Add(HtmlTextWriterStyle.Height, "150em")
-                homeOwnerManual.Visible = False
-                schematicDrawing.Visible = False
-                defectForm.Visible = False
-                residentHouseRules.Visible = False
-                ownerName.Visible = False
-                phaseCode.Visible = False
-                lotNo.Visible = False
-                address.Visible = False
-                unitType.Visible = False
-                phaseType.Visible = False
-                phaseName.Visible = False
-                schematic.Visible = False
-            End If
-        End If
-
         If gid <> "" Then
             If Not IsPostBack Then
                 homeOwnerManual.Attributes.Add("href", ConfigurationManager.AppSettings("ownerManual").ToString())
@@ -297,6 +278,27 @@ Public Class Landing
                         con.Close()
                     End Using
                 End Using
+
+                If bgimg IsNot Nothing Then
+                    If bgimg <> vbEmpty.ToString() Then
+                        form1.Style.Add(HtmlTextWriterStyle.BackgroundImage, bgimg)
+                        form1.Style.Add(HtmlTextWriterStyle.Height, "150em")
+                        homeOwnerManual.Visible = False
+                        schematicDrawing.Visible = False
+                        defectForm.Visible = False
+                        residentHouseRules.Visible = False
+
+                        ownerName.Text = "** Hidden Data - Trial Version **"
+                        phaseCode.Text = "** Hidden Data - Trial Version **"
+                        lotNo.Text = "** Hidden Data - Trial Version **"
+                        address.Text = "** Hidden Data - Trial Version **"
+                        unitType.Text = "** Hidden Data - Trial Version **"
+                        phaseType.Text = "** Hidden Data - Trial Version **"
+                        phaseName.Visible = False
+                        schematic.Visible = False
+                    End If
+                End If
+
             Catch ex As Exception
                 lblmessage.Text = ex.Message
             End Try

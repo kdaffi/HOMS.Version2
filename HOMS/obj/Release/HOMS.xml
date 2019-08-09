@@ -226,6 +226,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:HOMS.Manage._Label_Expired">
+<summary>
+Label_Expired control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:HOMS.Manage._FileUpload1">
 <summary>
 FileUpload1 control.
