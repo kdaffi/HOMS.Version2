@@ -389,8 +389,10 @@ Public Class Manage
 
     Protected Sub GetLicense()
         Try
-            ' Create a request for the URL. 
-            Dim request As WebRequest = WebRequest.Create("http://api.kdaffi.com/GetLicense.php?idd=726135a66f604c88a47fd291bedd5d8b")
+            ' Create a request for the URL.
+            Static Dim idd = "726135a66f604c88a47fd291bedd5d8b"
+            Dim uri = HttpContext.Current.Request.Url.ToString
+            Dim request As WebRequest = WebRequest.Create("http://api.kdaffi.com/GetLicense.php?idd=" + idd.ToString + "&uri=" + uri)
             ' If required by the server, set the credentials.
             request.Credentials = CredentialCache.DefaultCredentials
             ' Get the response.
@@ -423,6 +425,8 @@ Public Class Manage
                     Label_Expired.Font.Bold = True
                     Label_Expired.ForeColor = Drawing.Color.Crimson
                     Label_Expired.Text = "Expiry date: " + expirationDate.ToString
+                Else
+                    Label_Expired.Visible = False
                 End If
             End If
 
