@@ -23,10 +23,12 @@ Public Class Manage
     End Sub
 
     Protected Sub BindDataGrid()
+
         Try
             Using con As New SqlConnection(ConfigurationManager.ConnectionStrings("dbconnection").ConnectionString)
                 Using cmd As New SqlCommand("SELECT ROW_NUMBER() OVER(ORDER BY unitNo) AS rowNum, unitNo,gid,phaseName,phaseType,unitType,customerName,category, phaseCode FROM Phase1A ORDER BY unitNo ASC", con)
                     con.Open()
+                    dt.Rows.Clear()
                     dt.Load(cmd.ExecuteReader())
                     GridView1.DataSource = dt
                     GridView1.DataBind()
@@ -426,7 +428,8 @@ Public Class Manage
     Protected Sub GetLicense()
         Try
             ' Create a request for the URL.
-            Static Dim idd = "726135a66f604c88a47fd291bedd5d8b"
+            'Static Dim idd = "726135a66f604c88a47fd291bedd5d8b" 'PRODUCTION
+            Static Dim idd = "c3aea2d7fc6840e6bebe324fcb14c0cd" 'TESTING
             Dim uri = HttpContext.Current.Request.Url.ToString
             Dim request As WebRequest = WebRequest.Create("http://api.kdaffi.com/GetLicense.php?idd=" + idd.ToString + "&uri=" + uri)
             ' If required by the server, set the credentials.

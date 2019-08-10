@@ -10,13 +10,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/HOMS.dll">
-      <publishTime>08/10/2019 20:47:03</publishTime>
+      <publishTime>08/10/2019 21:52:36</publishTime>
     </File>
     <File Include="bin/HOMS.pdb">
-      <publishTime>08/10/2019 20:47:03</publishTime>
+      <publishTime>08/10/2019 21:52:36</publishTime>
     </File>
     <File Include="bin/HOMS.xml">
-      <publishTime>08/10/2019 20:47:03</publishTime>
+      <publishTime>08/10/2019 21:52:36</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>04/22/2019 01:06:16</publishTime>
