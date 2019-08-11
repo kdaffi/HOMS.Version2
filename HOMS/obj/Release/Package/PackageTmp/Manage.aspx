@@ -90,10 +90,11 @@
 
                     <h5 class="mt-1 mb-2">Login</h5>
 
-                    <div class="md-form ml-0 mr-0">
+                    <div class="md-form ml-0 mr-0" style="margin-bottom:-0.7rem;">
                       <asp:TextBox ID="pwd" TextMode="Password" runat="server" class="form-control form-control-sm" placeholder="Enter password"></asp:TextBox>
                          <div id="captcha" runat="server" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;" class="g-recaptcha" data-sitekey=""></div>
                     </div>
+                      <asp:Label runat="server" ID="login_error" CssClass="text-danger font-weight-normal" Visible="false">Invalid</asp:Label><br />
                       <asp:Button ID="btnlogin" class="btn btn-cyan mt-1" runat="server" text="Login" OnClick="btnlogin_Click" />
                     </div>
                   </div>

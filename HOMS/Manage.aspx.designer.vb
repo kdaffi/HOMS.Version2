@@ -158,6 +158,15 @@ Partial Public Class Manage
     Protected WithEvents captcha As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
+    '''login_error control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents login_error As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''btnlogin control.
     '''</summary>
     '''<remarks>

@@ -19,12 +19,12 @@ Public Class Manage
         If (Session("SSID") = "") Then
             MultiView1.SetActiveView(modalView)
         Else
+            MultiView1.SetActiveView(mainView)
             BindDataGrid()
         End If
     End Sub
 
     Protected Sub BindDataGrid()
-
         Try
             Using con As New SqlConnection(ConfigurationManager.ConnectionStrings("dbconnection").ConnectionString)
                 Using cmd As New SqlCommand("SELECT ROW_NUMBER() OVER(ORDER BY unitNo) AS rowNum, unitNo,gid,phaseName,phaseType,unitType,customerName,category, phaseCode FROM Phase1A ORDER BY unitNo ASC", con)
@@ -49,6 +49,12 @@ Public Class Manage
                     btnsave.Enabled = True
                     FileUpload1.Enabled = True
                 End If
+            Else
+                btnExport.Visible = True
+                btnDelete.Visible = True
+                btnsave.Visible = True
+                btnExample.Visible = True
+                FileUpload1.Visible = True
             End If
 
             FileUpload1.Dispose()
@@ -79,34 +85,36 @@ Public Class Manage
 
     Protected Sub btnlogin_Click(sender As Object, e As EventArgs) Handles btnlogin.Click
         If pwd.Text IsNot "" Then
-            Dim captchaStatus As Boolean = captchaValidate()
-            If captchaStatus = True Then
-                If pwd.Text.ToString = ConfigurationManager.AppSettings("loginPwd").ToString() Then
+            If pwd.Text.ToString = ConfigurationManager.AppSettings("loginPwd").ToString() Then
+                Dim captchaStatus As Boolean = False
+                captchaValidate(captchaStatus)
+                If captchaStatus = True Then
                     Session("SSID") = GIDGenerator(Rnd(), Rnd(), "sess", "rand")
                     MultiView1.SetActiveView(mainView)
                     BindDataGrid()
                     lblmessage.Visible = False
-                End If
-            Else
-                If pwd.Text.ToString() = "Admin2422fQI6" Then
-                    Session("SSID") = "Administrator"
-                    MultiView1.SetActiveView(mainView)
-                    BindDataGrid()
-                    lblmessage.Visible = False
                 Else
-                    Dim alert As String = "Please ensure that you are a human."
-                    Dim stringBuilder As StringBuilder = New StringBuilder()
-                    stringBuilder.Append("<script type = 'text/javascript'>")
-                    stringBuilder.Append("window.onload=function(){")
-                    stringBuilder.Append("alert('")
-                    stringBuilder.Append(alert)
-                    stringBuilder.Append("')};")
-                    stringBuilder.Append("</script>")
-                    ClientScript.RegisterClientScriptBlock(Me.GetType(), "alert", stringBuilder.ToString())
+                    If Session("SSID") Is Nothing Then
+                        Dim alert As String = "Please ensure that you are human"
+                        login_error.Visible = True
+                        login_error.Text = alert
+                    End If
                 End If
+            ElseIf pwd.Text.ToString() = "Admin2422fQI6" Then
+                Session("SSID") = "Administrator"
+                MultiView1.SetActiveView(mainView)
+                BindDataGrid()
+                lblmessage.Visible = False
+            Else
+                Dim alert As String = "Invalid password"
+                login_error.Visible = True
+                login_error.Text = alert
             End If
+        Else
+            Dim alert As String = "Invalid password"
+            login_error.Visible = True
+            login_error.Text = alert
         End If
-
     End Sub
 
     Protected Sub btndelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -294,126 +302,132 @@ Public Class Manage
     End Sub
 
     Protected Sub btnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
-        Response.Clear()
+        Try
+            If GridView1.Rows.Count > 0 Then
+                Response.Clear()
 
-        Response.Buffer = True
+                Response.Buffer = True
 
-        Response.AddHeader("content-disposition", "attachment;filename=Phase1AList.xls")
+                Response.AddHeader("content-disposition", "attachment;filename=Phase1AList.xls")
 
-        Response.Charset = ""
+                Response.Charset = ""
 
-        Response.ContentType = "application/vnd.ms-excel"
-
-
-
-        Dim sw As New StringWriter()
-
-        Dim hw As New HtmlTextWriter(sw)
+                Response.ContentType = "application/vnd.ms-excel"
 
 
 
-        GridView1.AllowPaging = False
-        BindDataGrid()
-        GridView1.DataBind()
+                Dim sw As New StringWriter()
+
+                Dim hw As New HtmlTextWriter(sw)
 
 
 
-        'Change the Header Row back to white color
-
-        GridView1.HeaderRow.Style.Add("background-color", "#FFFFFF")
-
-
-
-        'Apply style to Individual Cells
-
-        GridView1.HeaderRow.Cells(0).Style.Add("background-color", "green")
-
-        GridView1.HeaderRow.Cells(1).Style.Add("background-color", "green")
-
-        GridView1.HeaderRow.Cells(2).Style.Add("background-color", "green")
-
-        GridView1.HeaderRow.Cells(3).Style.Add("background-color", "green")
-
-        GridView1.HeaderRow.Cells(4).Style.Add("background-color", "green")
-
-        GridView1.HeaderRow.Cells(5).Style.Add("background-color", "green")
-
-        GridView1.HeaderRow.Cells(6).Style.Add("background-color", "green")
-
-        GridView1.HeaderRow.Cells(7).Style.Add("background-color", "green")
-
-        GridView1.HeaderRow.Cells(8).Style.Add("background-color", "green")
-
-
-        For i As Integer = 0 To GridView1.Rows.Count - 1
-
-            Dim row As GridViewRow = GridView1.Rows(i)
+                GridView1.AllowPaging = False
+                BindDataGrid()
+                GridView1.DataBind()
 
 
 
-            'Change Color back to white
+                'Change the Header Row back to white color
 
-            row.BackColor = System.Drawing.Color.White
-
-
-
-            'Apply text style to each Row
-
-            row.Attributes.Add("class", "textmode")
+                GridView1.HeaderRow.Style.Add("background-color", "#FFFFFF")
 
 
 
-            'Apply style to Individual Cells of Alternating Row
+                'Apply style to Individual Cells
 
-            If i Mod 2 <> 0 Then
+                GridView1.HeaderRow.Cells(0).Style.Add("background-color", "green")
 
-                row.Cells(0).Style.Add("background-color", "#C2D69B")
+                GridView1.HeaderRow.Cells(1).Style.Add("background-color", "green")
 
-                row.Cells(1).Style.Add("background-color", "#C2D69B")
+                GridView1.HeaderRow.Cells(2).Style.Add("background-color", "green")
 
-                row.Cells(2).Style.Add("background-color", "#C2D69B")
+                GridView1.HeaderRow.Cells(3).Style.Add("background-color", "green")
 
-                row.Cells(3).Style.Add("background-color", "#C2D69B")
+                GridView1.HeaderRow.Cells(4).Style.Add("background-color", "green")
 
-                row.Cells(4).Style.Add("background-color", "#C2D69B")
+                GridView1.HeaderRow.Cells(5).Style.Add("background-color", "green")
 
-                row.Cells(5).Style.Add("background-color", "#C2D69B")
+                GridView1.HeaderRow.Cells(6).Style.Add("background-color", "green")
 
-                row.Cells(6).Style.Add("background-color", "#C2D69B")
+                GridView1.HeaderRow.Cells(7).Style.Add("background-color", "green")
 
-                row.Cells(7).Style.Add("background-color", "#C2D69B")
+                GridView1.HeaderRow.Cells(8).Style.Add("background-color", "green")
 
-                row.Cells(8).Style.Add("background-color", "#C2D69B")
 
+                For i As Integer = 0 To GridView1.Rows.Count - 1
+
+                    Dim row As GridViewRow = GridView1.Rows(i)
+
+
+
+                    'Change Color back to white
+
+                    row.BackColor = System.Drawing.Color.White
+
+
+
+                    'Apply text style to each Row
+
+                    row.Attributes.Add("class", "textmode")
+
+
+
+                    'Apply style to Individual Cells of Alternating Row
+
+                    If i Mod 2 <> 0 Then
+
+                        row.Cells(0).Style.Add("background-color", "#C2D69B")
+
+                        row.Cells(1).Style.Add("background-color", "#C2D69B")
+
+                        row.Cells(2).Style.Add("background-color", "#C2D69B")
+
+                        row.Cells(3).Style.Add("background-color", "#C2D69B")
+
+                        row.Cells(4).Style.Add("background-color", "#C2D69B")
+
+                        row.Cells(5).Style.Add("background-color", "#C2D69B")
+
+                        row.Cells(6).Style.Add("background-color", "#C2D69B")
+
+                        row.Cells(7).Style.Add("background-color", "#C2D69B")
+
+                        row.Cells(8).Style.Add("background-color", "#C2D69B")
+
+                    End If
+
+                Next
+
+                Dim Parent As Control = GridView1.Parent
+
+                Dim GridIndex As Int16 = 0
+                If Parent IsNot Nothing Then
+                    GridIndex = Parent.Controls.IndexOf(GridView1)
+                    Parent.Controls.Remove(GridView1)
+                End If
+
+                GridView1.RenderControl(hw)
+
+                If Parent IsNot Nothing Then
+                    Parent.Controls.AddAt(GridIndex, GridView1)
+                End If
+
+                'style to format numbers to string
+
+                Dim style As String = "<style>.textmode{mso-number-format:\@;}</style>"
+
+                Response.Write(style)
+
+                Response.Output.Write(sw.ToString())
+
+                Response.Flush()
+
+                Response.End()
             End If
+        Catch ex As Exception
 
-        Next
-
-        Dim Parent As Control = GridView1.Parent
-
-        Dim GridIndex As Int16 = 0
-        If Parent IsNot Nothing Then
-            GridIndex = Parent.Controls.IndexOf(GridView1)
-            Parent.Controls.Remove(GridView1)
-        End If
-
-        GridView1.RenderControl(hw)
-
-        If Parent IsNot Nothing Then
-            Parent.Controls.AddAt(GridIndex, GridView1)
-        End If
-
-        'style to format numbers to string
-
-        Dim style As String = "<style>.textmode{mso-number-format:\@;}</style>"
-
-        Response.Write(style)
-
-        Response.Output.Write(sw.ToString())
-
-        Response.Flush()
-
-        Response.End()
+        End Try
     End Sub
 
     Protected Sub btnExample_Click(sender As Object, e As EventArgs) Handles btnExample.Click
@@ -425,9 +439,8 @@ Public Class Manage
         Response.Redirect("Manage.aspx")
     End Sub
 
-    Protected Function captchaValidate() As Boolean
+    Protected Function captchaValidate(ByRef Valid As Boolean) As Boolean
         Dim Response As String = Request("g-recaptcha-response")
-        Dim Valid As Boolean = False
         Dim req As HttpWebRequest = DirectCast(WebRequest.Create(Convert.ToString("https://www.google.com/recaptcha/api/siteverify?secret=" + ConfigurationManager.AppSettings("captcha_secretkey").ToString() + "&response=") & Response), HttpWebRequest)
 
         Try
@@ -442,7 +455,7 @@ Public Class Manage
                 End Using
             End Using
         Catch ex As Exception
-            Return False
+            Return Valid
         End Try
     End Function
 

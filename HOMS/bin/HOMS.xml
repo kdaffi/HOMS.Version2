@@ -325,6 +325,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:HOMS.Manage._login_error">
+<summary>
+login_error control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:HOMS.Manage._btnlogin">
 <summary>
 btnlogin control.
